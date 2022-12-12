@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{351F41BC-B9CD-4461-B8DE-84956368A777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbetsprov.CSharp.Web", "src\Arbetsprov.CSharp.Web\Arbetsprov.CSharp.Web.csproj", "{491942C2-0E12-43E0-B99A-5802D34978F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbetsprov.CSharp.Web", "src\Arbetsprov.CSharp.Web\Arbetsprov.CSharp.Web.csproj", "{491942C2-0E12-43E0-B99A-5802D34978F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A1EB26F7-5DE0-499B-9881-9FBC0A961CFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arbetsprov.CSharp.Web.Tests", "test\Arbetsprov.CSharp.Web.Tests\Arbetsprov.CSharp.Web.Tests.csproj", "{0F2B6417-4AAE-452C-82F4-13C8359E762F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arbetsprov.CSharp.Web.Tests", "test\Arbetsprov.CSharp.Web.Tests\Arbetsprov.CSharp.Web.Tests.csproj", "{0F2B6417-4AAE-452C-82F4-13C8359E762F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{491942C2-0E12-43E0-B99A-5802D34978F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +46,14 @@ Global
 		{0F2B6417-4AAE-452C-82F4-13C8359E762F}.Release|x86.ActiveCfg = Release|Any CPU
 		{0F2B6417-4AAE-452C-82F4-13C8359E762F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{491942C2-0E12-43E0-B99A-5802D34978F1} = {351F41BC-B9CD-4461-B8DE-84956368A777}
 		{0F2B6417-4AAE-452C-82F4-13C8359E762F} = {A1EB26F7-5DE0-499B-9881-9FBC0A961CFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C59B7BC-A823-42D9-BB5C-1AA237CD4266}
 	EndGlobalSection
 EndGlobal
