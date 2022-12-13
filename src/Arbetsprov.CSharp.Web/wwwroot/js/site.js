@@ -14,22 +14,23 @@ async function getWeatherAPIData(lat, lon) {
 }
 
 async function populateWeatherForecast(lat, lon) {
-    let weatherData = (await getWeatherAPIData(lat, lon)).Properties;
-    weatherContainer.innerHTML =
-        `<div id="weather-data-forecast">
+    try {
+        let weatherData = (await getWeatherAPIData(lat, lon)).Properties;
+        weatherContainer.innerHTML =
+            `<div id="weather-data-forecast">
             <div id = "weather-data-meta">
                 <div>Uppdaterad: ${weatherData.Meta.UpdatedAt}</div>
             </div >
             <div id="weather-data-cards"/>
         </div>`;
-    let forecasts = document.getElementById('weather-data-cards');
+        let forecasts = document.getElementById('weather-data-cards');
 
-    for (var i = 0; i < weatherData.Timeseries.length; i += 2) {
-        if (i > 24 * 2) break;
-        let htmlContainer = document.createElement("div");
-        htmlContainer.className = "weather-data-timestamp";
-        htmlContainer.innerHTML =
-            `<div class="card-body">
+        for (var i = 0; i < weatherData.Timeseries.length; i += 2) {
+            if (i > 24 * 2) break;
+            let htmlContainer = document.createElement("div");
+            htmlContainer.className = "weather-data-timestamp";
+            htmlContainer.innerHTML =
+                `<div class="card-body">
                 <h5 class="card-title">${weatherData.Timeseries[i].Data.Instant.Details.AirTemperature} °C</h5>
                 <h6 class="card-subtitle mb-2 text-muted" id="weather-data-meta">${weatherData.Timeseries[i].Time}</h6>
                 <p class="card-text">
@@ -38,6 +39,9 @@ async function populateWeatherForecast(lat, lon) {
                     <div class="weather-icon">${weatherData.Timeseries[i].Data.Next1Hours.Summary.SymbolCode} </div>
                 </p>   
             </div>`;
-        forecasts.append(htmlContainer);
+            forecasts.append(htmlContainer);
+        }
+    } catch (e) {
+        weatherContainer.textContent = 'Kunde ej hämta väderdata, försök igen.'
     }
 }
